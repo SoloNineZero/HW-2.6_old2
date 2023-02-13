@@ -25,6 +25,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func forgotPasswordAction() {
         showAlert(withTitle: "Oops!", andMessage: "Your password is 1 😀")
+        passwordTF.text = ""
     }
     
     
