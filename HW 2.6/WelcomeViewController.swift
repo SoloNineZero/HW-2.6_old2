@@ -17,22 +17,23 @@ final class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         welcomeLabel.text = "Welcome, \(userName ?? "")!"
 
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.frame = view.bounds
-//        gradientLayer.colors = [
-//            UIColor.systemRed.cgColor,
-//            UIColor.systemCyan.cgColor
-//        ]
-//
-//        //view.layer.addSublayer(gradientLayer)
-        
+    }
+    
+    func setGradientBackground() {
+        let colorTop =  UIColor(red: 220.0/255.0, green: 120.0/255.0, blue: 150.0/255.0, alpha: 1.0).cgColor
+        let colorBottom = UIColor(red: 100.0/255.0, green: 120.0/255.0, blue: 190.0/255.0, alpha: 1.0).cgColor
+                    
         let gradientLayer = CAGradientLayer()
-        
-        gradientLayer.colors = [UIColor.red.cgColor, UIColor.blue.cgColor]
-        
-        gradientLayer.locations = [0.0, 1.0]
-        
-        view.layer.addSublayer(gradientLayer)
+        gradientLayer.colors = [colorTop, colorBottom]
+        gradientLayer.locations = [0.5, 1.5]
+        gradientLayer.frame = self.view.bounds
+                
+        self.view.layer.insertSublayer(gradientLayer, at:0)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setGradientBackground()
+        super.viewWillAppear(animated)
     }
     
 }
