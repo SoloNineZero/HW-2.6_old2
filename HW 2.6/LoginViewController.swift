@@ -59,7 +59,7 @@ final class LoginViewController: UIViewController {
     
 }
 
-// MARK: - UIAlertController
+// Алёрт
 extension LoginViewController {
     private func showAlert(withTitle title: String, andMessage message: String) {
         let alert = UIAlertController(
